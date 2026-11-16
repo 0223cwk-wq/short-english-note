@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>한영 영어 노트</title>
+<title>한영 shorts 영어노트</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -2360,7 +2360,7 @@ function ddayHtml(){
 function renderHome(){
   const ll=lastLabel();
   const solved=ALL.filter(id=>DB.qa[id]).length, right=ALL.filter(id=>DB.qa[id]&&DB.qa[id].ok).length;
-  let h='<section class="hero">'+ddayHtml()+'<div class="titlerow"><h1>한영 영어 노트</h1><span class="madeby">Made by. chaeng</span></div><p class="subtitle">2학년 2학기 기말 범위</p><p class="range"><span class="rl">범위</span>2024년 10월 학력평가, 2022년·2023년 11월 모의고사<br>21~24번, 29~40번 (48지문)</p><button class="guidebtn" data-guide>사용 방법 보기</button></section>';
+  let h='<section class="hero">'+ddayHtml()+'<div class="titlerow"><h1>한영 shorts 영어노트</h1><span class="madeby">Made by. chaeng</span></div><p class="subtitle">2학년 2학기 기말 범위</p><p class="range"><span class="rl">범위</span>2024년 10월 학력평가, 2022년·2023년 11월 모의고사<br>21~24번, 29~40번 (48지문)</p><button class="guidebtn" data-guide>사용 방법 보기</button></section>';
   h+='<div class="start">';
   if(ll)h+='<button class="big primary" data-continue><span class="bt">이어서 공부하기</span><span class="bd">'+esc(ll)+"</span></button>";
   else h+='<button class="big primary" data-open="2024-21"><span class="bt">첫 지문부터 시작하기</span><span class="bd">2024년 10월 21번</span></button>';
@@ -2814,7 +2814,7 @@ function renderGrowth(){
 /* home */
 function renderHome2(){
   const D=dayRec();const td=todayDisc();const due=dueKeys().length;const ll=lastLabel();const L=levelInfo();const sk=streak();
-  let h='<section class="hero2">'+ddayHtml()+'<p class="kicker">'+KDATE()+'</p><div class="titlerow"><h1>한영 영어 노트</h1><span class="madeby">Made by. chaeng</span></div><p class="subtitle">2학년 2학기 기말 범위</p>';
+  let h='<section class="hero2">'+ddayHtml()+'<p class="kicker">'+KDATE()+'</p><div class="titlerow"><h1>한영 shorts 영어노트</h1><span class="madeby">Made by. chaeng</span></div><p class="subtitle">2학년 2학기 기말 범위</p>';
   h+='<div class="streak"><span class="flame" aria-hidden="true"></span><b>'+(sk?'연속 '+sk+'일':'오늘 시작하면 연속 1일')+'</b><span class="sub">Lv.'+L.lv+' · 기억한 항목 '+L.m+'개</span><span class="minimeter" aria-hidden="true"><i style="width:'+(L.cur*10)+'%"></i></span></div></section>';
   h+='<button class="hero3" data-tabgo="m"><span class="h3k">'+(D.m?"오늘 "+D.m+"번 완료 · 한 번 더?":"숏폼 대신, 딱 3분")+'</span><span class="h3t">지금 3분만 공부하기</span><span class="h3d">카드 5장 · '+esc(shortOf(recommendPid()))+'</span><span class="h3go" aria-hidden="true">→</span></button>';
   h+='<button class="disccard" data-dopen="'+td.id+'"><span class="dck">오늘의 발견 · '+esc(td.cat)+'</span><span class="dcq">'+esc(td.q)+'</span><span class="sub">'+esc(shortOf(td.pid))+' 지문에서 출발 · 1분 읽기'+(DB.disc[td.id]&&DB.disc[td.id].read?" · 읽음":"")+'</span></button>';
@@ -2920,7 +2920,7 @@ document.addEventListener("keydown",e=>{if(feedEl.hidden)return;if(e.key==="Esca
 /* ---------- 새 홈 ---------- */
 function renderHome3(){
   const D=dayRec();const td=todayDisc();const due=dueKeys().length;const ll=lastLabel();const L=levelInfo();const sk=streak();
-  let h='<section class="hx">'+ddayHtml()+'<p class="kicker">'+KDATE()+'</p><div class="titlerow"><h1>한영 영어 노트</h1><span class="madeby">Made by. chaeng</span></div><p class="subtitle">2학년 2학기 기말 범위</p>';
+  let h='<section class="hx">'+ddayHtml()+'<p class="kicker">'+KDATE()+'</p><div class="titlerow"><h1>한영 shorts 영어노트</h1><span class="madeby">Made by. chaeng</span></div><p class="subtitle">2학년 2학기 기말 범위</p>';
   h+='<div class="chipsrow"><span class="pill fire"><span class="flame" aria-hidden="true"></span>'+(sk?'연속 '+sk+'일':'오늘 시작하면 연속 1일')+'</span><span class="pill lv">Lv.'+L.lv+' <span class="minimeter" aria-hidden="true"><i style="width:'+(L.cur*10)+'%"></i></span></span></div></section>';
   h+='<button class="start3" data-tabgo="m"><span class="s3cards" aria-hidden="true"><i></i><i></i><i></i></span><span class="s3k">'+(D.m?"오늘 "+D.m+"번 성공 · 한 판 더?":"숏폼 대신 딱 3분")+'</span><span class="s3t">3분 도전 START</span><span class="s3d">카드 5장 · '+esc(shortOf(recommendPid()))+'</span></button>';
   h+='<div class="shelfh"><h2>오늘의 발견</h2><span class="sub">위아래로 넘겨 보는 1분 지식</span></div><div class="shelf" role="list">'+discOrder().map((x,i)=>{const A=ART[x.id]||{};const r=DB.disc[x.id]||{};return '<button class="thumb" role="listitem" data-feed="'+x.id+'" style="--bg:'+A.bg+';--fg:'+A.fg+'">'+(i===0?'<span class="tbadge">TODAY</span>':'')+(r.read?'<span class="tread">봤음</span>':'')+'<span class="tart">'+(A.svg||"")+'</span><span class="tq">'+esc(x.q)+'</span></button>';}).join("")+'</div>';
